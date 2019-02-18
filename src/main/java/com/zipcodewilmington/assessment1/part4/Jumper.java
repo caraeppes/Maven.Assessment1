@@ -5,7 +5,17 @@ public class Jumper {
     /*
      * Complete the function below.
      */
-    public int jumps(int k, int j) {
-        return -1;
+    public Integer jumps(int k, int j) {
+        int totalJumps = 0;
+        if (j > k){
+            return k;
+        }
+        int jJumps = (int)Math.floor(k/j);
+
+        while (((jJumps * j) + totalJumps) < k){
+            totalJumps++;
+        }
+        totalJumps += jJumps;
+        return totalJumps;
     }
 }
